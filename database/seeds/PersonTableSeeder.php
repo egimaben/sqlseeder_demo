@@ -1,6 +1,5 @@
 <?php
 
-
 use App\Core\Seeder;
 
 use App\Database\DB;
