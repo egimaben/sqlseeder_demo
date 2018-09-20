@@ -17,7 +17,7 @@ composer require fzaninotto/faker"
 ```
 ## Usage
 
-Create `database\seeds` directory structure in your project root and create a primary seeder class whose name must be `database\seeds\MySeeder.php` and must implement `App\Core\Seeder`. Any other seeder classes can be invoked from this class' `seed` method. `App\Database\DB` is mirror of `Illuminate\Database\Capsule\Manager` and is accessible you the client, see examples below:
+Create `database\seeds` directory structure in your project root and create a primary seeder class whose name must be `database\seeds\MySeeder.php` and must implement `App\Core\Seeder`. Any other seeder classes can be invoked from this class' `seed` method. `App\Database\DB` is mirror of `Illuminate\Database\Capsule\Manager` and is accessible to the client, see examples below:
 ### Seeder 1: database/seeds/TaskTableSeeder.php
 
 ``` php
