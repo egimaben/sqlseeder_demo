@@ -2,95 +2,17 @@
 
 ## Install
 
-Create a project directory:
+Clone the repo:
 ``` bash
-$ mkdir myseeder && cd myseeder
+git clone https://github.com/egimaben/sqlseeder_demo.git
+cd sqlseeder_demo
 ```
-Add `egimaben\sqlseeder` as a dependency:
+Install dependencies:
 
 ``` bash
-composer require egimaben\sqlseeder
-```
-My demo here uses Faker for generating data, so you will need to require it as well:
-``` bash
-composer require fzaninotto/faker"
-```
-## Usage
-
-Create `database\seeds` directory structure in your project root and create a primary seeder class whose name must be `database\seeds\MySeeder.php` and must implement `App\Core\Seeder`. Any other seeder classes can be invoked from this class' `seed` method. `App\Database\DB` is mirror of `Illuminate\Database\Capsule\Manager` and is accessible to the client, see examples below:
-### Seeder 1: database/seeds/TaskTableSeeder.php
-
-``` php
-<?php
-
-use App\Core\Seeder;
-use App\Database\DB;
-
-class TaskTableSeeder extends Seeder
-{
-    public function seed()
-    {
-        $faker = \Faker\Factory::create();
-
-        echo "Seeding tasks table\n";
-
-        for ($i = 0; $i < 50; $i++) {
-
-            DB::table('tasks')->insert(['description' => $faker->name, 'done' => 0]);
-
-        }
-    }
-}
-```
-### Seeder 2: database/seeds/PersonTableSeeder.php
-
-``` php
-<?php
-
-
-use App\Core\Seeder;
-
-use App\Database\DB;
-
-class PersonTableSeeder extends Seeder
-{
-
-    public function seed()
-    {
-        $faker = \Faker\Factory::create();
-
-        echo "Seeding person table\n";
-
-        for ($i = 0; $i < 50; $i++) {
-
-            DB::table('person')->insert(['name' => substr($faker->name, 0, 20), 'age' => $i]);
-
-        }
-
-    }
-}
+composer install
 ```
 
-### Primary Seeder: database/seeds/MySeeder.php
-
-``` php
-<?php
-use App\Core\Seeder;
-
-require('PersonTableSeeder.php');
-require('TaskTableSeeder.php');
-
-class MySeeder extends Seeder
-{
-
-    public function seed()
-    {
-        $this->invoke([PersonTableSeeder::class, TaskTableSeeder::class]);
-
-    }
-
-}
-```
 You must provide a `.env` file at the project root with the following mandatory configs:
 ``` props
 DB_DRIVER = 'mysql'
