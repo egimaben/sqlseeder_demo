@@ -2,9 +2,6 @@
   "name": "egima/test",
   "description": "testing client for egimaben/sqlseeder",
   "license": "proprietary",
-  "autoload": {
-    "classmap":["database/seeds/"]
-  },
   "require": {
     "fzaninotto/faker": "^1.8",
     "egimaben/sqlseeder": "^1.0"

@@ -38,6 +38,6 @@ If you discover any security related issues, please email egimaben@gmail.com ins
 
 ## License
 
-The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
+The MIT License (MITx). Please see [License File](LICENSE.md) for more information.
 
 [link-author]: https://github.com/egimaben
